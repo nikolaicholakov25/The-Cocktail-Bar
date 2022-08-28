@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.ul li{
+    padding: 1em;
+    display: inline;
+}
+.navbar a {
+    padding-bottom: 0.1em;
+    text-decoration: none;
+    color: black;
+}
+.ul {
+    padding: 1em;
+}
+.logo {
+    margin-left: 2em;
+}
+.logo i{
+    transform: translateY(30%);
+    font-size: 2rem;
+}
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+.navbar ul a:hover {
+    border-bottom: 1.4px solid black;
+}
