@@ -1,6 +1,7 @@
 @import url('./fontawesome-free-6.1.2-web/css/all.css');
 @import url('./css/navbar.css');
 @import url('./css/home.css');
+@import url('./css/checkout.css');
 
 
 body {
@@ -22,3 +23,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

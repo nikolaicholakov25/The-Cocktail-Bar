@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../App";
 import { getById } from "../../services/cocktailServices";
 
 export const HomeGalleryCard = (props) => {
     let {strDrink ,idDrink} = props.drink;
 
+    let {cart,setCart} = useContext(CartContext)
+
     let [cocktail,setCocktail] = useState([])
-    let [Ingredients, setIngredients] = useState([])
 
     let drink
 
@@ -19,13 +21,28 @@ export const HomeGalleryCard = (props) => {
         getById(idDrink)
         .then(x => setCocktail(x))
     },[])
+
+    const addCocktail = (event) => {
+        let ele = event.target.parentElement
+        
+        if(ele.classList.contains('greenBG')){
+            ele.classList.remove('greenBG')
+            setCart(x => x.filter(el => el.idDrink !== drink.idDrink))
+            
+        } else {
+            setCart(x => [...x ,drink])
+            ele.classList.add('greenBG')
+            
+        }
+    }
     
     return (
         <div className="randomCocktailCard">
         <h2>{strDrink}</h2>
         {cocktail.drinks ? 
         <>
-        <button id="addIcon" ><i class="fa-solid fa-plus"></i></button>
+        <button onClick={addCocktail} className="addIcon">
+        <i class="fa-solid fa-circle-plus"></i></button>
         <img id="img" alt="cocktail" src={drink.strDrinkThumb}/>
         <ul className="ingredients">
             <li>{drink.strIngredient1}</li>
