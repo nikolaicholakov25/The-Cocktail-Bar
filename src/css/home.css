@@ -3,6 +3,9 @@
     margin: .4em;
     text-align: center;
 }
+.homeWrapper h1 {
+    color: white;
+}
 
 .homeGalleryWrapper {
     background-color: transparent;
@@ -62,6 +65,7 @@
 .center {
     display: block;
     text-align: center;
+    margin-bottom: 0;
 }
 .ingredients {
     width: 100%;
@@ -86,6 +90,7 @@
     background-color: transparent;
     width: 2vw;
     border: none;
+    color: rgb(7, 194, 7);
 }
 .addIcon:hover {
     transform: scale(1.1);
@@ -100,5 +105,5 @@
     cursor: pointer;
     width: 2vw;
     border: none;
-    color: rgb(7, 194, 7);
+    color: rgb(214, 10, 10);
 }

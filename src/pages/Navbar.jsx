@@ -12,7 +12,7 @@ export const Navbar = () => {
                 <li><Link to={'/alcoholic'}>Alcoholic</Link></li>
                 <li><Link to={'/non-alcoholic'}>Non Alcoholic</Link></li>
                 <li><Link to={'/optional-alcohol'}>Optional Alcohol</Link></li>
-                <li><Link to={'/checkout'}>Checkout</Link></li>
+                <li><Link to={'/checkout'}><i id="checkout" class="fa-solid fa-cart-shopping"></i>Checkout</Link></li>
                 <li><Link to={'/where-to-find-us'}>Where To Find Us</Link></li>
             </ul>
         </div>

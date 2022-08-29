@@ -1,7 +1,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    background-color: white;
 }
 .ul li{
     padding: 1em;
@@ -28,4 +28,7 @@
 }
 .navbar ul a:hover {
     border-bottom: 1.4px solid black;
+}
+#checkout{
+    margin-right: .5em;
 }
