@@ -100,3 +100,46 @@
 .receipt::-webkit-scrollbar {
     display: none;
 }
+
+#drinks {
+    color: white;
+    margin-bottom: 2em;
+}
+.receipt{
+    padding: 2em;
+}
+
+.checkoutBtn {
+    color: white;
+    font-size: 2rem;
+}
+#drinkCategory {
+    text-decoration: underline;
+}
+
+.removeCocktailReceipt {
+    background-color: transparent;
+    border: none;
+    color: red;
+    position: absolute;
+    top: 0;
+    font-size: 1.5rem;
+    right: 0;
+    cursor: pointer;
+}
+
+.buttons > * {
+    cursor: pointer;
+    border-radius: 1em;
+    background-color: white;
+    font-size: 1rem;
+    padding: .6em 1em;
+    margin-right: 2em;
+}
+.buttons {
+    margin-top: 2em;
+}
+
+.buttons > *:hover {
+    transform: scale(1.1);
+}

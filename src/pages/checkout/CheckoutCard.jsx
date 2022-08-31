@@ -5,10 +5,17 @@ export const CheckoutCard = (props) => {
 
     let {cart,setCart} = useContext(CartContext)
 
+
+    console.log(props);
     let drink = props.drink
 
+    let {setSplittedPrice , price} = props
+
+    console.log(setSplittedPrice);
+    
     const removeCocktail = () => {
         setCart(x => x.filter(el => el.idDrink !== drink.idDrink))
+        setSplittedPrice(price / 2)
     }
 
     return (

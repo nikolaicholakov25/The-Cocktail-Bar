@@ -14,9 +14,6 @@ export const Home = () => {
 
     return (
         <div className="homeWrapper">
-            <h1>Welcome To The Cocktail Bar</h1>
-            {/* <h3>Browse Some Of Our Cocktails</h3> */}
-
             <div className="homeGalleryWrapper">
             { randomCocktails.drinks ?
             randomCocktails.drinks.map(drink => <HomeGalleryCard key={drink.idDrink} drink={drink} />) 

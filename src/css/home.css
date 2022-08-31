@@ -6,7 +6,9 @@
 .homeWrapper h1 {
     color: white;
 }
-
+.homeWrapper {
+    height: 100vh;
+}
 .homeGalleryWrapper {
     background-color: transparent;
     margin: auto;
@@ -14,6 +16,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: .5em;
     gap: 2em;
 }
 
@@ -22,7 +25,7 @@
     overflow: hidden;
     border-radius: 1em;
     background-color: rgb(0, 0, 0);
-    height: 40vh;
+    height: 38vh;
 } 
 .randomCocktailCard:hover {
     transform: scale(1.04);
@@ -50,9 +53,6 @@
     border-radius: 2em;
 }
 
-.otherCocktails:hover #btn{
-    border-bottom: 1.4px solid black;
-}
 .randomCocktailCard h2 {
     position: absolute;
     z-index: 10;
@@ -106,4 +106,11 @@
     width: 2vw;
     border: none;
     color: rgb(214, 10, 10);
+}
+#btn {
+    color: white;
+}
+
+.otherCocktails{
+    border: 1px solid white;
 }
