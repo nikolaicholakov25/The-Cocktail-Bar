@@ -110,6 +110,7 @@
 }
 
 .checkoutBtn {
+    text-align: center;
     color: white;
     font-size: 2rem;
 }
@@ -134,10 +135,12 @@
     background-color: white;
     font-size: 1rem;
     padding: .6em 1em;
-    margin-right: 2em;
+    /* margin-right: 2em; */
 }
 .buttons {
     margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
 }
 
 .buttons > *:hover {

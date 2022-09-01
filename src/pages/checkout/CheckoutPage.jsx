@@ -15,14 +15,14 @@ export const CheckoutPage = (props) => {
         setPrice(cart.reduce((acc , el) => 
         acc += Number(el.idDrink.slice(0,2)) 
         , 0))
-    },[cart])
+
+        setSplittedPrice(price / 2)
+    },[cart,billSplitted,price])
 
     const removeCocktail = (idDrink) => {
         setCart(cart.filter(el => el.idDrink !== idDrink))
         setSplittedPrice(price / 2)
     }
-
-    let navigate = useNavigate()
 
     const splitBill = () => {
        setBillSplitted(x => !x)
@@ -35,7 +35,7 @@ export const CheckoutPage = (props) => {
         <div className="checkoutWrapper">
             {cart.length >= 1
             ?
-            cart.map(x => <CheckoutCard drink={x} setSplittedPrice={setSplittedPrice} price={price}/>)
+            cart.map(x => <CheckoutCard drink={x}/>)
             : <h1 className="noCocktails">Please Add Cocktails To Your Cart</h1>
             }
         </div>
@@ -44,7 +44,8 @@ export const CheckoutPage = (props) => {
                 <div className="receipt">
                     {cart.map(x => {
                         return <div key={x.idDrink} className="drinksWrapper">
-                            <h3 id="drinks">{x.strDrink} --- <span id="drinkCategory">{x.strCategory}</span> --- {x.idDrink.slice(0,2)}$  <button onClick={() => removeCocktail(x.idDrink)} className="removeCocktailReceipt">
+                            <h3 id="drinks">{x.strDrink} --- <span id="drinkCategory">{x.strCategory}</span> --- {x.idDrink.slice(0,2)}$  
+                            <button onClick={() => removeCocktail(x.idDrink)} className="removeCocktailReceipt">
                             <i class="fa-solid fa-square-xmark"></i>
                             </button></h3>
                         </div>

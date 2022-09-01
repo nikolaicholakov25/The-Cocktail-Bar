@@ -18,6 +18,26 @@
     justify-content: space-between;
     margin-top: .5em;
     gap: 2em;
+    /* height: 100vh; */
+    /* overflow-y: scroll; */
+    /* padding-bottom: 2em; */
+}
+.cocktailsGalleryWrapper {
+    background-color: transparent;
+    margin: auto;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: .5em;
+    gap: 2em;
+    height: 100vh;
+     overflow-y: scroll;
+    padding-bottom: 4em;
+}
+
+.cocktailsGalleryWrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .randomCocktailCard {
