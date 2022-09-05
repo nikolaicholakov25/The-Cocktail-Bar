@@ -7,6 +7,7 @@ import { Home } from './pages/homePage/Home';
 import { Navbar } from './pages/Navbar';
 import { OrdinaryDrinksPage } from './pages/ordinaryDrinks/OrdinaryDrinks';
 import { SoftDrinksPage } from './pages/softDrinksPage/softDrinksPage';
+import { GoogleMapPage } from './pages/map/googleMap';
 
 export const CartContext = createContext()
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/ordinary-drinks' element={<OrdinaryDrinksPage />}/>
           <Route path='/soft-drinks' element={<SoftDrinksPage />}/>
           <Route path='/checkout' element={<CheckoutPage />}/>
+          <Route path='/where-to-find-us' element={<GoogleMapPage />}/>
         </Routes>
 
       </CartContext.Provider>

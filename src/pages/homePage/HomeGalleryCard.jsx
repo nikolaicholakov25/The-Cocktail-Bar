@@ -9,6 +9,7 @@ export const HomeGalleryCard = (props) => {
     let {cart,setCart} = useContext(CartContext)
 
     let [cocktail,setCocktail] = useState([])
+    let [selected,setSelected] = useState(false)
 
     let drink
 
@@ -28,10 +29,12 @@ export const HomeGalleryCard = (props) => {
         if(ele.classList.contains('greenBG')){
             ele.classList.remove('greenBG')
             setCart(x => x.filter(el => el.idDrink !== drink.idDrink))
+            setSelected(x => !x)
             
         } else {
             setCart(x => [...x ,drink])
             ele.classList.add('greenBG')
+            setSelected(x => !x)
             
         }
     }
@@ -39,21 +42,27 @@ export const HomeGalleryCard = (props) => {
     return (
         <div className="randomCocktailCard">
         <h2>{strDrink}</h2>
-        {cocktail.drinks ? 
-        <>
-        <button onClick={addCocktail} className="addIcon">
-        <i class="fa-solid fa-circle-plus"></i></button>
-        <img id="img" alt="cocktail" src={drink.strDrinkThumb}/>
-        <ul className="ingredients">
-            <li>{drink.strIngredient1}</li>
-            <li>{drink.strIngredient2}</li>
-            <li>{drink.strIngredient3}</li>
-            <li>{drink.strIngredient4}</li>
-            <li>{drink.strIngredient5}</li>
-        </ul>
-        </>
-        : null
-        }
+            {cocktail.drinks ? 
+            <>
+            <button onClick={addCocktail} className="addIcon">
+                {selected 
+                ?
+                <i class="fa-solid fa-square-xmark"></i>
+                :
+                <i class="fa-solid fa-circle-plus"></i>
+                }
+            </button>
+            <img id="img" alt="cocktail" src={drink.strDrinkThumb}/>
+            <ul className="ingredients">
+                <li>{drink.strIngredient1}</li>
+                <li>{drink.strIngredient2}</li>
+                <li>{drink.strIngredient3}</li>
+                <li>{drink.strIngredient4}</li>
+                <li>{drink.strIngredient5}</li>
+            </ul>
+            </>
+            : null
+            }
         </div>
     )
 }

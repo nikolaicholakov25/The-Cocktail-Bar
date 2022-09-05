@@ -35,7 +35,7 @@ export const CheckoutPage = (props) => {
         <div className="checkoutWrapper">
             {cart.length >= 1
             ?
-            cart.map(x => <CheckoutCard drink={x}/>)
+            cart.map(x => <CheckoutCard key={x.idDrink} drink={x}/>)
             : <h1 className="noCocktails">Please Add Cocktails To Your Cart</h1>
             }
         </div>
@@ -65,7 +65,6 @@ export const CheckoutPage = (props) => {
                     <button onClick={splitBill}>PAY IN FULL</button>
                     :
                     <button onClick={splitBill}>SPLIT THE BILL</button>
-
                     }
                     </>
                     : null}
