@@ -12,6 +12,8 @@ export const GoogleMapPage = () => {
         height: '100vh'
     }
 
+    let key = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+
     const options = {
         mapId: '2f92f67e3057ecb3',
         disableDefaultUI: true,
@@ -19,7 +21,7 @@ export const GoogleMapPage = () => {
     }
 
     const {isLoaded} = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey: key,
         libraries: ['places']
     })
 
