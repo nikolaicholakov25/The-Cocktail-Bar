@@ -3,7 +3,6 @@ import { APIKey } from '../../config/googleMapsConfig';
 import { getDestination } from '../../services/googleMapServices';
 import { GoogleMap , useLoadScript , Marker, StreetViewPanorama} from '@react-google-maps/api'
 import { NewMarker } from './newMarker';
-import { env } from 'process';
 
 export const GoogleMapPage = () => {
 
