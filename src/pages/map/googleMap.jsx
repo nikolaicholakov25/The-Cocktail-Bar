@@ -19,7 +19,7 @@ export const GoogleMapPage = () => {
     }
 
     const {isLoaded} = useLoadScript({
-        googleMapsApiKey: env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries: ['places']
     })
 
