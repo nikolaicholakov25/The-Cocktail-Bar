@@ -12,7 +12,7 @@ export const GoogleMapPage = () => {
         height: '100vh'
     }
 
-    let key = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    let key = 'AIzaSyAVTp4shl2qBH9EBC6AQKMhRyVsA38ITyQ'
 
     const options = {
         mapId: '2f92f67e3057ecb3',
