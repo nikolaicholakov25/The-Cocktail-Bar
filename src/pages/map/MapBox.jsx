@@ -1,10 +1,13 @@
-import mapboxgl, {Marker} from 'mapbox-gl'
-import { useState, useRef, useEffect } from 'react'
+// import mapboxgl, {Marker} from 'mapbox-gl'
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
+import { useState, useRef, useEffect } from 'react';
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoibmlrb2xhaWNob2xha292MjUiLCJhIjoiY2w3c3F1amtzMDVsNzNwbzB4ZnAxemRjNSJ9.ehrUZsQZizObHg1cP9K9_w'
 
-export const MapBox = () => {
 
+export const MapBox = () => {
+    
     let [lng,setLng] = useState(24.75113792422516)
     let [lat,setLat] = useState(42.141508290657086)
     let [zoom,setZoom] = useState(14)
@@ -24,9 +27,10 @@ export const MapBox = () => {
     const mapContainer = useRef(null);
     const map = useRef(null);
 
+    // mapboxgl.workerClass = MapboxWorker;
     useEffect(() => {
         if (map.current) return; // initialize map only once
-            map.current = new mapboxgl.Map({
+        map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [lng, lat],
