@@ -3,30 +3,31 @@ import { APIKey } from '../../config/googleMapsConfig';
 import { getDestination } from '../../services/googleMapServices';
 import { GoogleMap , useLoadScript , Marker, StreetViewPanorama} from '@react-google-maps/api'
 import { NewMarker } from './newMarker';
+import { MapBox } from './MapBox';
 
 export const GoogleMapPage = () => {
+    // MapBox()
+    // const styles = {
+    //     width: '100vw',
+    //     height: '100vh'
+    // }
 
-    const styles = {
-        width: '100vw',
-        height: '100vh'
-    }
+    // let key = 'AIzaSyAVTp4shl2qBH9EBC6AQKMhRyVsA38ITyQ'
 
-    let key = 'AIzaSyAVTp4shl2qBH9EBC6AQKMhRyVsA38ITyQ'
+    // const options = {
+    //     mapId: '2f92f67e3057ecb3',
+    //     disableDefaultUI: true,
+    //     zoomControl: true,
+    // }
 
-    const options = {
-        mapId: '2f92f67e3057ecb3',
-        disableDefaultUI: true,
-        zoomControl: true,
-    }
-
-    const {isLoaded} = useLoadScript({
-        googleMapsApiKey: key,
-        libraries: ['places']
-    })
+    // const {isLoaded} = useLoadScript({
+    //     googleMapsApiKey: key,
+    //     libraries: ['places']
+    // })
 
     return (
-        <div id='map' className="mapWrapper">
-            {isLoaded 
+        <div id='map' className="mapWrapper map">
+            {/* {isLoaded 
             ? <GoogleMap 
             zoom={15.2}
             center={{lat: 42.141508290657086 , lng: 24.75113792422516}}
@@ -43,7 +44,7 @@ export const GoogleMapPage = () => {
                <NewMarker lat={42.14254051585426} lng={24.745412115831698} place='Club Fargo'/>
                <NewMarker lat={42.13549067871786} lng={24.749637426787697} place='Piano bar Gatsby'/>
             </GoogleMap>
-            : <h1>Loading...</h1>}
+            : <h1>Loading...</h1>} */}
         </div>
     )
 
