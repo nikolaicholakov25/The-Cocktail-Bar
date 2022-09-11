@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { getSearchResult } from "../services/cocktailServices"
+import { SearchResult } from "./SearchResult"
 
 
 export const Navbar = () => {
@@ -35,7 +36,7 @@ export const Navbar = () => {
                         {
                         search !== '' 
                         ? result !== null 
-                        ? result.map(each => <li>{each.strDrink}</li>)
+                        ? result.map(each => <SearchResult name={each.strDrink} />)
                         : null
                         : null
                         }

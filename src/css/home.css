@@ -106,9 +106,9 @@
     top: 1em;
     font-size: 2rem;
     z-index: 20;
+    width: 2vw;
     cursor: pointer;
     background-color: transparent;
-    width: 2vw;
     border: none;
     color: rgb(7, 194, 7);
 }
