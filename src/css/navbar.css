@@ -32,3 +32,33 @@
 #checkout{
     margin-right: .5em;
 }
+
+.dropDownDiv {
+    display: inline-block;
+}
+.dropDownDiv:hover .dropDownMenu{
+    display: flex;
+    cursor: pointer;
+}
+
+.dropDownMenu li:hover{
+    background-color: white;
+}
+
+.dropDownMenu {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    z-index: 999;
+}
+.dropDownMenu li{
+    background-color: rgb(240, 240, 240);
+    /* padding: 1em; */
+}
+
+.downBtn{
+    border: none;
+    background-color: transparent;
+    font-size: 0.9rem;
+}
