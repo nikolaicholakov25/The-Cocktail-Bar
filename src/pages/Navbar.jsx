@@ -1,12 +1,49 @@
+import { useEffect } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import { getSearchResult } from "../services/cocktailServices"
 
 
 export const Navbar = () => {
+
+    let [search,setSearch] = useState('')
+    let [result,setResult] = useState([])
+    let [searched,setSearched] = useState(false)
+    let [searchClass,setSearchClass] = useState('none')
+
+    useEffect(() => {
+        getSearchResult(search)
+        .then(res => 
+            setResult(res.drinks.slice(0,20))
+            )
+        .then(x => search == '' ? setSearchClass('none') : setSearchClass('searchResult'))
+    }, [search])
+
+
     return (
         <div className="navbar">
             <div className="logo">
-            <Link to={'/'}><i class="fa-solid fa-martini-glass"></i></Link>
+                <Link to={'/'}><i class="fa-solid fa-martini-glass"></i></Link>
+            </div>
+
+            <div className="searchDiv">
+                <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search For A Cocktail..."/>
+                <button id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+                <div className={searchClass}>
+                    <ul>
+                        {
+                        search !== '' 
+                        ? result !== null 
+                        ? result.map(each => <li>{each.strDrink}</li>)
+                        : null
+                        : null
+                        }
+                    </ul>
                 </div>
+
+            </div>
+
             <ul className="ul">
                 <li><Link to={'/'}>Home</Link></li>
 
