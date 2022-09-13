@@ -6,12 +6,17 @@ import { SearchResult } from "./SearchResult"
 
 
 export const Navbar = () => {
-
+    
     let [search,setSearch] = useState('')
     let [result,setResult] = useState([])
     let [searched,setSearched] = useState(false)
     let [searchClass,setSearchClass] = useState('none')
-
+    
+    document.addEventListener('click' , (e) => {
+        if(e.target.closest('.searchDiv')) return
+        setSearch('')  
+    })
+    
     useEffect(() => {
         getSearchResult(search)
         .then(res => 
@@ -21,11 +26,6 @@ export const Navbar = () => {
     }, [search])
 
 
-    const loseFocus = (e) => {
-        console.log('here');
-        console.log(e);
-    }
-
     return (
         <div className="navbar">
             <div className="logo">
@@ -33,7 +33,7 @@ export const Navbar = () => {
             </div>
 
             <div className="searchDiv">
-                <input onFocusCapture={loseFocus} onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search For A Cocktail..."/>
+                <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search For A Cocktail..."/>
                 <button id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
 
                 <div className={searchClass}>
