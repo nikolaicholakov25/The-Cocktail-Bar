@@ -15,11 +15,16 @@ export const Navbar = () => {
     useEffect(() => {
         getSearchResult(search)
         .then(res => 
-            setResult(res.drinks.slice(0,20))
+            setResult(res.drinks.slice(0,10))
             )
-        .then(x => search == '' ? setSearchClass('none') : setSearchClass('searchResult'))
+        .then(x => search === '' ? setSearchClass('none') : setSearchClass('searchResult'))
     }, [search])
 
+
+    const loseFocus = (e) => {
+        console.log('here');
+        console.log(e);
+    }
 
     return (
         <div className="navbar">
@@ -28,7 +33,7 @@ export const Navbar = () => {
             </div>
 
             <div className="searchDiv">
-                <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search For A Cocktail..."/>
+                <input onFocusCapture={loseFocus} onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search For A Cocktail..."/>
                 <button id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
 
                 <div className={searchClass}>
@@ -36,7 +41,7 @@ export const Navbar = () => {
                         {
                         search !== '' 
                         ? result !== null 
-                        ? result.map(each => <SearchResult name={each.strDrink} />)
+                        ? result.map(each => <SearchResult key={each.idDrink} id={each.idDrink} name={each.strDrink} />)
                         : null
                         : null
                         }

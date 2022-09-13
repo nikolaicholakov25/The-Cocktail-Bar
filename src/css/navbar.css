@@ -100,7 +100,7 @@
     flex-direction: column;
     top: 3.4rem;
     left: 0;
-    z-index: 200;
+    z-index: 900;
     background-color: rgba(255, 255, 255, 0.879);
 }
 

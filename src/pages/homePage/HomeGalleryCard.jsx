@@ -17,7 +17,6 @@ export const HomeGalleryCard = (props) => {
         drink = cocktail.drinks[0]
     }
 
-    
     useEffect(() => {
         getById(idDrink)
         .then(x => setCocktail(x))
